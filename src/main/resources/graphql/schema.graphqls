@@ -1,0 +1,23 @@
+type Panel{
+    id:ID!
+    brandName:String
+    panelType:PanelType
+}
+
+enum PanelType{
+    IPS,
+    VA,
+    TN,
+}
+
+
+type Mutation{
+    create(brandName:String,panelType:PanelType):Panel
+    update(id:ID,brandName:String,panelType:PanelType):Panel
+    deleteById(id:ID):Panel
+}
+
+type Query{
+    findAll:[Panel]!
+    findById(id:ID):Panel
+}
